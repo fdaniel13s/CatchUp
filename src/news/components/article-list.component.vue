@@ -1,7 +1,7 @@
+
+
 <script setup>
-
-import ArticleCard from "./article-card.component.vue";
-
+import ArticleCard from './article-card.component.vue';
 export default{
   name: 'article-list',
   components: {ArticleCard},

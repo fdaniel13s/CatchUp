@@ -21,7 +21,8 @@ import Button from "primevue/button";
 import Avatar from "primevue/avatar";
 import Menubar from "primevue/menubar";
 import Toolbar from "primevue/toolbar";
-import Menu from "primevue/menu"; // Esto es para los estilos de PrimeFlex
+import Menu from "primevue/menu";
+import i18n from "./i18n.js"; // Esto es para los estilos de PrimeFlex
 
 //Vamos a trabajar con los componentes
 
@@ -36,6 +37,10 @@ app.use(PrimeVue, {ripple: true}) // ripple es para los botones
     .component('pv-toolbar',Toolbar)
     .component('pv-menu-bar',Menubar)
     .component('pv-menu',Menu)
+
+//i18n
+app.use(i18n)
+
 app.mount('#app')
 
 
