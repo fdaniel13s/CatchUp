@@ -1,12 +1,15 @@
 <script>
+import{NewsApiService} from "./news/services/news-api.service";
+import{Article} from "./news/model/article.entity.js";
 import SideMenu from "./news/components/side-menu.component.vue";
 import ArticleList from "./news/components/article-list.component.vue";
 import UnavailableContent from "./news/components/unavailable-content.component.vue";
 import LanguageSwitcher from "./public/componenets/language-switcher.component.vue";
+import FooterContent from "./public/componenets/footer-content.component.vue";
 
 export default {
   name: "app",
-  components: {LanguageSwitcher, UnavailableContent, ArticleList, SideMenu},
+  components: {FooterContent, LanguageSwitcher, UnavailableContent, ArticleList, SideMenu},
   data(){
     return {
       sidebarVisible: false,
@@ -29,7 +32,7 @@ export default {
           , article.source));
     },
     getArticleForSource(sourceId){
-      this.newsApi.getArticles(sourceId)
+      this.newsApi.getArticlesForSource(sourceId)
           .then(response => {
             let articles = this.buildArticleListFromResponseData(response.data.articles);
             this.articles = this.buildArticleListFromResponseData(articles);

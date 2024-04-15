@@ -24,7 +24,15 @@ export default {
         <p>{{article.source.name}}</p>
       </span>
       </p>
+
+      <p class="flex align-content-start lg:flex-wrap mt-4">
+        {{article.description}}
+      </p>
     </template>
+    <template #footer>
+      <a :href="article.url" target="_blank">{{ $t('read-more') }}</a>
+      </template>
+
 
   </pv-card>
 </template>

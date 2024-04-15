@@ -6,6 +6,4 @@ export class Article {
         this.urlToImage = urlToImage;
         this.source = source;
     }
-
-
 }

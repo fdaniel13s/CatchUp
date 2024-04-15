@@ -1,9 +1,10 @@
 // NewsApi Service
 
 import axios from 'axios';
+import {LogoApiService} from "../../shared/services/logo-api.service.js";
 
 const http = axios.create({
-    baseURL: 'https://newsapi.org'
+    baseURL: 'https://newsapi.org/v2'
 })
 
 export class NewsApiService {
@@ -18,8 +19,8 @@ export class NewsApiService {
     }
 
     // Esta funcion hace una peticion a la API de NewsAPI para obtener los articulos de una fuente en particular
-    getArticles(sourceId) {
-        return http.get(`top-headlines?sources=${source.id}&apiKey=${this.apiKey}`)
+    getArticlesForSource(sourceId) {
+        return http.get(`top-headlines?sources=${sourceId}&apiKey=${this.apiKey}`)
     }
 
     // Esta funcion hace una peticion a la API de Clearbit para obtener el logo de la URL que se le pase
